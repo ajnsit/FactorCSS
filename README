@@ -1,0 +1,23 @@
+FactorCSS README
+================
+
+Description
+-----------
+This tool takes a CSS stylesheet on input and produces an almost equivalent stylesheet on output, but with rulesets split, combined, and reordered to "factor out" common declarations. This helps reveal shared components. The resulting stylesheet may also be smaller.
+
+The only known case where the output is not equivalent to the input is when the stylesheet depends on the order of rules (see CSS 2.1 6.4.1).
+
+Original Source
+---------------
+The original source is at http://zamez.org/factorcss
+
+Modifications from the original by Anupam Jain (ajnsit -a-t- g-m-a-i-l)
+-----------------------------------------------------------------------
+I modified Parser.y to allow for CSS properties that start with '-' or '_'. This enables parsing of properties that are non-standard extensions to CSS by various vendors.
+
+Such CSS properties are of the form -
+
+'-' + vendor specific identifier + '-' + meaningful name
+'_' + vendor specific identifier + '-' + meaningful name
+
+
