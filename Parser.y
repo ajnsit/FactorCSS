@@ -185,6 +185,7 @@ declaration	:: { Declaration }
 
 property	:: { String }
 		: IDENT s				{ $1 }
+		| MINUS IDENT s	{ '-':$2 }
 
 prio		:: { Bool }
 		: IMPORTANT_SYM				{ True }
