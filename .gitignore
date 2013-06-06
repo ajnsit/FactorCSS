@@ -1,0 +1,6 @@
+*.hi
+*.o
+*~
+Parser.hs
+Tokeniser.hs
+factorcss
