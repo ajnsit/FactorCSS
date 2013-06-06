@@ -15,8 +15,8 @@
 -- The only known case where the output is not equivalent to the input is when
 -- the stylesheet depends on the order of rules (see CSS 2.1 6.4.1).
 
-import List
-import System
+import Data.List
+import System.Environment
 import Tokeniser
 import Parser
 import CSS

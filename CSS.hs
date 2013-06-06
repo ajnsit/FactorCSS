@@ -8,8 +8,8 @@
 -- Datatypes for CSS
 
 module CSS where
-import List
-import Numeric
+import Data.List
+-- import Numeric
 
 data Stylesheet
 	= Stylesheet
@@ -146,12 +146,15 @@ show_declaration (p, vs, i) = p ++ ": " ++ show_values vs ++
 show_values :: [Value] -> String
 show_values = concat . intersperse " " . map show_value
 
+showFFloat :: (Num n, Show n) => n -> String -> String
+showFFloat n s = show n ++ s
+
 show_value :: Value -> String
-show_value (Number n) = showFFloat Nothing n ""
-show_value (Percentage p) = showFFloat Nothing p "%"
+show_value (Number n) = showFFloat n ""
+show_value (Percentage p) = showFFloat p "%"
 show_value (Length l) = l
-show_value (Ems e) = showFFloat Nothing e "em"
-show_value (Exs x) = showFFloat Nothing x "ex"
+show_value (Ems e) = showFFloat e "em"
+show_value (Exs x) = showFFloat x "ex"
 show_value (Angle a) = a
 show_value (Time t) = t
 show_value (Freq f) = f
